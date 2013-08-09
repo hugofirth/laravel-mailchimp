@@ -1,0 +1,21 @@
+{
+    "name": "hugofirth/mailchimp",
+    "description": "Wrapper on the MCAPI class provided by Mailchimp - with support for Laravel 4",
+    "keywords": ["laravel", "mailchimp"],
+    "authors": [
+        {
+            "name": "Hugo Firth",
+            "email": "hebfirth@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x"
+    },
+    "autoload": {
+        "psr-0": {
+            "Hugofirth\\Mailchimp": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
