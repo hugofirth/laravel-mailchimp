@@ -1,6 +1,4 @@
-<?php
-
-namespace Hugofirth\Mailchimp;
+<?php namespace Hugofirth\Mailchimp;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Config;
@@ -31,8 +29,8 @@ class MailchimpServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-        $this->app['mailchimp'] = $this->app->share(function($app) {
-            return new Mailchimp(Config::get('mailchimp::apikey'));
+        $this->app->singleton('mailchimp',  function() {
+            return new MCAPI(Config::get('mailchimp::apikey'));
         });
 	}
 

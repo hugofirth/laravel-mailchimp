@@ -2,7 +2,7 @@
 
 namespace HugoFirth\Mailchimp;
 
-class Mailchimp {
+class MCAPI {
     var $version = "1.3";
     var $errorMessage;
     var $errorCode;

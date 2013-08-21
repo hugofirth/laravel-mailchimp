@@ -8,10 +8,9 @@ return array(
     | API Secret Key
     |--------------------------------------------------------------------------
     |
-    | The api secret key is a 32 character string to be sent with each
-    | request to the api exposed by the routes.php file. Clients containing the
-    | key will be distributed so this is not considered to render the api secure
-    | however will remove some erroneous or dirty request
+    | The api secret key provided by Mailchimp. If you don't know your API key
+    | you can find out how to get it here:
+    | "http://kb.mailchimp.com/article/where-can-i-find-my-api-key/"
     |
     */
 
