@@ -34,6 +34,10 @@ Furthermore, add the following the the `aliases` array:
 		'Mailchimp'       => 'Hugofirth\Mailchimp\Facades\Mailchimp',
 		…
 	),
+	
+Publish the configuration
+
+	$ php artisan config:publish hugofirth/mailchimp
 
 Lastly, run the command `composer update`.
 
@@ -43,7 +47,7 @@ _\* The subsequent steps should be repeated for any file `app.php` created for a
 
 ###Usage:
 
-Your unique MailChimp API key should be set in the package's config found in `..vendor/hugofirth/mailchimp/src/config/config.php`
+Your unique MailChimp API key should be set in the package's config found in `app/config/packages/hugofirth/mailchimp/config.php`
 
 Methods of the MailChimp api class work as described by the MailChimp API docs found [Here][3]. Thanks to Laravel's use of the "Facade" design pattern, all methods may be called in the following manner:
 
