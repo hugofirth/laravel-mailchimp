@@ -11,7 +11,7 @@ In order to install add the following to your `composer.json` file within the `r
 
 	"require": {
 		…
-		"hugofirth/mailchimp": "dev-master",
+		"hugofirth/mailchimp": "v2.0.*",
 		…	
 	}
 
