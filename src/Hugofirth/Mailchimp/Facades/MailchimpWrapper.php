@@ -4,10 +4,10 @@ namespace HugoFirth\Mailchimp\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Mailchimp extends Facade
+class MailchimpWrapper extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'mailchimp';
+        return 'mailchimp_wrapper';
     }
 }

@@ -5,7 +5,7 @@ use Mailchimp;
 class MailchimpWrapper {
 
 	/**
-	 * Field is instance of class \Mailchimp
+	 * Field is instance of class Mailchimp
 	 *
 	 * @var mc
 	 */
