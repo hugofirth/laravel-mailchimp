@@ -2,6 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Config;
+use Mailchimp;
 
 class MailchimpServiceProvider extends ServiceProvider {
 
@@ -30,7 +31,7 @@ class MailchimpServiceProvider extends ServiceProvider {
 	public function register()
 	{
         $this->app->singleton('mailchimp',  function() {
-            return new MCAPI(Config::get('mailchimp::apikey'));
+            return new Mailchimp(Config::get('mailchimp::apikey'));
         });
 	}
 

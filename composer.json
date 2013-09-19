@@ -1,6 +1,6 @@
 {
     "name": "hugofirth/mailchimp",
-    "description": "Wrapper on the MCAPI class provided by Mailchimp - with support for Laravel 4",
+    "description": "Wrapper on the Mailchimp class provided by Mailchimp - with support for Laravel 4. v2.0.0 supports Mailchimp API verion 2.0",
     "keywords": ["laravel", "mailchimp"],
     "authors": [
         {
@@ -10,7 +10,8 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "illuminate/support": "4.0.x"
+        "illuminate/support": "4.0.x",
+        "mailchimp/mailchimp": "dev-master"
     },
     "autoload": {
         "psr-0": {
