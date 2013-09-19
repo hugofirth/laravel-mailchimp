@@ -1,7 +1,5 @@
 <?php namespace Hugofirth\Mailchimp;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Config;
 use Mailchimp;
 
 class MailchimpWrapper {

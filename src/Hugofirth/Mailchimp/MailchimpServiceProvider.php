@@ -31,7 +31,8 @@ class MailchimpServiceProvider extends ServiceProvider {
 	public function register()
 	{
         $this->app->singleton('mailchimp',  function() {
-            return new Mailchimp(Config::get('mailchimp::apikey'));
+            $mc = new Mailchimp(Config::get('mailchimp::apikey'));
+            return new MailchimpWrapper($mc);
         });
 	}
 
