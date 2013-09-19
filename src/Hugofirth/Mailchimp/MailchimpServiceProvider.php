@@ -43,7 +43,7 @@ class MailchimpServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array('mailchimp');
+		return array('mailchimp_wrapper');
 	}
 
 }
