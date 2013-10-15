@@ -13,15 +13,15 @@ class MailchimpServiceProvider extends ServiceProvider {
 	 */
 	protected $defer = false;
 
-    /**
-     * Bootstrap the application events.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        $this->package('hugofirth/mailchimp');
-    }
+	/**
+	 * Bootstrap the application events.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		$this->package('hugofirth/mailchimp');
+	}
 
 	/**
 	 * Register the service provider.
@@ -30,10 +30,11 @@ class MailchimpServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-        $this->app->singleton('mailchimp_wrapper',  function() {
-            $mc = new Mailchimp(Config::get('mailchimp::apikey'));
-            return new MailchimpWrapper($mc);
-        });
+		$this->app->singleton('mailchimp_wrapper',  function() {
+			$mc = new Mailchimp($this->app['config']->get('mailchimp::apikey'));
+
+			return new MailchimpWrapper($mc);
+		});
 	}
 
 	/**

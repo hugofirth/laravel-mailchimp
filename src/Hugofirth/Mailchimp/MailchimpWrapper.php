@@ -26,7 +26,7 @@ class MailchimpWrapper {
 
 	/**
 	 * Get Mailchimp_Folders object
-	 * 
+	 *
 	 * @return Mailchimp_Folders
 	 */
 	public function folders()
@@ -36,7 +36,7 @@ class MailchimpWrapper {
 
 	/**
 	 * Get Mailchimp_Templates object
-	 * 
+	 *
 	 * @return Mailchimp_Templates
 	 */
 	public function templates()
@@ -46,7 +46,7 @@ class MailchimpWrapper {
 
 	/**
 	 * Get Mailchimp_Users object
-	 * 
+	 *
 	 * @return Mailchimp_Users
 	 */
 	public function users()
@@ -56,7 +56,7 @@ class MailchimpWrapper {
 
 	/**
 	 * Get Mailchimp_Helper object
-	 * 
+	 *
 	 * @return Mailchimp_Helper
 	 */
 	public function helper()
@@ -66,7 +66,7 @@ class MailchimpWrapper {
 
 	/**
 	 * Get Mailchimp_Mobile object
-	 * 
+	 *
 	 * @return Mailchimp_Mobile
 	 */
 	public function mobile()
@@ -76,7 +76,7 @@ class MailchimpWrapper {
 
 	/**
 	 * Get Mailchimp_Ecomm object
-	 * 
+	 *
 	 * @return Mailchimp_Ecomm
 	 */
 	public function ecomm()
@@ -86,7 +86,7 @@ class MailchimpWrapper {
 
 	/**
 	 * Get Mailchimp_Neapolitan object
-	 * 
+	 *
 	 * @return Mailchimp_Neapolitan
 	 */
 	public function neapolitan()
@@ -96,7 +96,7 @@ class MailchimpWrapper {
 
 	/**
 	 * Get Mailchimp_Lists object
-	 * 
+	 *
 	 * @return Mailchimp_Lists
 	 */
 	public function lists()
@@ -106,7 +106,7 @@ class MailchimpWrapper {
 
 	/**
 	 * Get Mailchimp_Campaigns object
-	 * 
+	 *
 	 * @return Mailchimp_Campaigns
 	 */
 	public function campaigns()
@@ -116,7 +116,7 @@ class MailchimpWrapper {
 
 	/**
 	 * Get Mailchimp_Vip object
-	 * 
+	 *
 	 * @return Mailchimp_Vip
 	 */
 	public function vip()
@@ -126,7 +126,7 @@ class MailchimpWrapper {
 
 	/**
 	 * Get Mailchimp_Reports object
-	 * 
+	 *
 	 * @return Mailchimp_Reports
 	 */
 	public function reports()
@@ -136,7 +136,7 @@ class MailchimpWrapper {
 
 	/**
 	 * Get Mailchimp_Gallery object
-	 * 
+	 *
 	 * @return Mailchimp_Gallery
 	 */
 	public function gallery()
@@ -144,6 +144,4 @@ class MailchimpWrapper {
 		return $this->mc->gallery;
 	}
 
-
 }
-
