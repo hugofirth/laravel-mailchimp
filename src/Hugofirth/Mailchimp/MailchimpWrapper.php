@@ -2,6 +2,31 @@
 
 use Mailchimp;
 
+/**
+ * Class MailchimpWrapper
+ * Valid method/property list as of version Mailchimp API 2.0.4
+ * @method \Mailchimp_Folders folders() accesses the $folders property
+ * @method \Mailchimp_Templates templates() accesses the $templates property
+ * @method \Mailchimp_Users users() accesses the $users property
+ * @method \Mailchimp_Helper helper() accesses the $helper property
+ * @method \Mailchimp_Mobile mobile() accesses the $mobile property
+ * @method \Mailchimp_Ecomm ecomm() accesses the $ecomm property
+ * @method \Mailchimp_Neapolitan neapolitan() accesses the $neapolitan property
+ * @method \Mailchimp_Lists lists() accesses the $lists property
+ * @method \Mailchimp_Campaigns campaigns() accesses the $campaigns property
+ * @method \Mailchimp_Vip vip() accesses the $vip property
+ * @method \Mailchimp_Reports reports() accesses the $reports property
+ * @method \Mailchimp_Gallery gallery() accesses the $gallery property
+ * @method bool ssl_verifypeer() accesses the $ssl_verifypeer property
+ * @method bool ssl_verifyhost() accesses the $ssl_verifyhost property
+ * @method string ssl_cainfo() accesses the $ssl_cainfo property
+ * @method string apikey() accesses the $apikey property
+ * @method bool debug() accesses the $debug property
+ * @method array call($url, $params) accesses the call method
+ * @method mixed readConfigs() accesses the readConfigs method
+ * @method mixed caseError($result) accesses the castError method
+ * @method void log($msg) accesses the log method
+ */
 class MailchimpWrapper {
 
 	/**
@@ -22,126 +47,23 @@ class MailchimpWrapper {
 		$this->mc = $mc;
 	}
 
-	//Accessors for public member objects beyond this point
+    /**
+     * Proxies call to the underlying MailChimp API
+     *
+     * @param $method
+     * @param array $args
+     * @return mixed
+     */
+    public function __call($method, array $args)
+    {
+        //If it's a method, call it
+        if(method_exists($this->mc, $method))
+        {
+            return call_user_func_array(array($this->mc, $method), $args);
+        }
 
-	/**
-	 * Get Mailchimp_Folders object
-	 *
-	 * @return Mailchimp_Folders
-	 */
-	public function folders()
-	{
-		return $this->mc->folders;
-	}
-
-	/**
-	 * Get Mailchimp_Templates object
-	 *
-	 * @return Mailchimp_Templates
-	 */
-	public function templates()
-	{
-		return $this->mc->templates;
-	}
-
-	/**
-	 * Get Mailchimp_Users object
-	 *
-	 * @return Mailchimp_Users
-	 */
-	public function users()
-	{
-		return $this->mc->users;
-	}
-
-	/**
-	 * Get Mailchimp_Helper object
-	 *
-	 * @return Mailchimp_Helper
-	 */
-	public function helper()
-	{
-		return $this->mc->helper;
-	}
-
-	/**
-	 * Get Mailchimp_Mobile object
-	 *
-	 * @return Mailchimp_Mobile
-	 */
-	public function mobile()
-	{
-		return $this->mc->mobile;
-	}
-
-	/**
-	 * Get Mailchimp_Ecomm object
-	 *
-	 * @return Mailchimp_Ecomm
-	 */
-	public function ecomm()
-	{
-		return $this->mc->ecomm;
-	}
-
-	/**
-	 * Get Mailchimp_Neapolitan object
-	 *
-	 * @return Mailchimp_Neapolitan
-	 */
-	public function neapolitan()
-	{
-		return $this->mc->neapolitan;
-	}
-
-	/**
-	 * Get Mailchimp_Lists object
-	 *
-	 * @return Mailchimp_Lists
-	 */
-	public function lists()
-	{
-		return $this->mc->lists;
-	}
-
-	/**
-	 * Get Mailchimp_Campaigns object
-	 *
-	 * @return Mailchimp_Campaigns
-	 */
-	public function campaigns()
-	{
-		return $this->mc->campaigns;
-	}
-
-	/**
-	 * Get Mailchimp_Vip object
-	 *
-	 * @return Mailchimp_Vip
-	 */
-	public function vip()
-	{
-		return $this->mc->vip;
-	}
-
-	/**
-	 * Get Mailchimp_Reports object
-	 *
-	 * @return Mailchimp_Reports
-	 */
-	public function reports()
-	{
-		return $this->mc->reports;
-	}
-
-	/**
-	 * Get Mailchimp_Gallery object
-	 *
-	 * @return Mailchimp_Gallery
-	 */
-	public function gallery()
-	{
-		return $this->mc->gallery;
-	}
+        //Otherwise, treat it as a property
+        return $this->mc->{$method};
+    }
 
 }

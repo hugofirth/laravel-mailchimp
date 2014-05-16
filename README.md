@@ -56,6 +56,20 @@ Methods of the MailChimp api class work as described by the MailChimp API docs f
 	//Subscribe a user, with email: $email_address, to a list with id: $list_id
 	MailchimpWrapper::lists()->subscribe($list_id, array('email'=>$email_address));
 
+In order to allow for auto-completion, you can include a use statement for the Facade:
+
+    <?php
+
+    use Hugofirth\Mailchimp\Facades\MailchimpWrapper;
+
+    class SomeClass
+    {
+        public function someMethod()
+        {
+            MailchimpWrapper:: //You should be able to get auto completion here for the API methods/properties
+        }
+    }
+
 Enjoy!
 
 [1]: http://apidocs.mailchimp.com/api/downloads/#php
