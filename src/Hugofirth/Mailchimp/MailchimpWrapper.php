@@ -47,23 +47,23 @@ class MailchimpWrapper {
 		$this->mc = $mc;
 	}
 
-    /**
-     * Proxies call to the underlying MailChimp API
-     *
-     * @param $method
-     * @param array $args
-     * @return mixed
-     */
-    public function __call($method, array $args)
-    {
-        //If it's a method, call it
-        if(method_exists($this->mc, $method))
-        {
-            return call_user_func_array(array($this->mc, $method), $args);
-        }
+	/**
+	 * Proxies call to the underlying MailChimp API
+	 *
+	 * @param $method
+	 * @param array $args
+	 * @return mixed
+	 */
+	public function __call($method, array $args)
+	{
+		//If it's a method, call it
+		if(method_exists($this->mc, $method))
+		{
+			return call_user_func_array(array($this->mc, $method), $args);
+		}
 
-        //Otherwise, treat it as a property
-        return $this->mc->{$method};
-    }
+		//Otherwise, treat it as a property
+		return $this->mc->{$method};
+	}
 
 }
