@@ -9,33 +9,41 @@ The package supports use with the [Laravel framework][2] (v4) providing a `Mailc
 
 In order to install add the following to your `composer.json` file within the `require` block:
 
-	"require": {
-		…
-		"hugofirth/mailchimp": "2.0.*",
-		…	
-	}
+```js
+"require": {
+    …
+    "hugofirth/mailchimp": "2.0.*",
+    …
+}
+```
 
 Within Laravel, locate the file `..app/config/app.php` *.
 
 Add the following to the `providers` array:
 
-	'providers' => array(
-		…
-		'Hugofirth\Mailchimp\MailchimpServiceProvider',
-		…
-	),
+```php
+'providers' => array(
+    …
+    'Hugofirth\Mailchimp\MailchimpServiceProvider',
+    …
+),
+```
 
 Furthermore, add the following the the `aliases` array:
 
-	'aliases' => array(
-		…
-		'MailchimpWrapper'       => 'Hugofirth\Mailchimp\Facades\MailchimpWrapper',
-		…
-	),
-	
+```php
+'aliases' => array(
+    …
+    'MailchimpWrapper'       => 'Hugofirth\Mailchimp\Facades\MailchimpWrapper',
+    …
+),
+```
+
 Publish the configuration
 
-	$ php artisan config:publish hugofirth/mailchimp
+```sh
+$ php artisan config:publish hugofirth/mailchimp
+```
 
 Lastly, run the command `composer update`.
 
@@ -49,26 +57,30 @@ Your unique MailChimp API key should be set in the package's config found in `ap
 
 Methods of the MailChimp api class work as described by the MailChimp API docs found [Here][3]. Examples of actual usage can be found [Here][4] (**Warning**: Examples use CakePHP). Thanks to Laravel's use of the "Facade" design pattern, all methods may be called in the following manner:
 
-	…
-	//Retrieve an array of lists for your account
-	$lists = MailchimpWrapper::lists()->getList()['data'];
-	…
-	//Subscribe a user, with email: $email_address, to a list with id: $list_id
-	MailchimpWrapper::lists()->subscribe($list_id, array('email'=>$email_address));
+```php
+…
+//Retrieve an array of lists for your account
+$lists = MailchimpWrapper::lists()->getList()['data'];
+…
+//Subscribe a user, with email: $email_address, to a list with id: $list_id
+MailchimpWrapper::lists()->subscribe($list_id, array('email'=>$email_address));
+```
 
 In order to allow for auto-completion, you can include a use statement for the Facade:
 
-    <?php
+```php
+<?php
 
-    use Hugofirth\Mailchimp\Facades\MailchimpWrapper;
+use Hugofirth\Mailchimp\Facades\MailchimpWrapper;
 
-    class SomeClass
+class SomeClass
+{
+    public function someMethod()
     {
-        public function someMethod()
-        {
-            MailchimpWrapper:: //You should be able to get auto completion here for the API methods/properties
-        }
+        MailchimpWrapper:: //You should be able to get auto completion here for the API methods/properties
     }
+}
+```
 
 Enjoy!
 
