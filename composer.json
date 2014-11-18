@@ -19,5 +19,10 @@
             "Hugofirth\\Mailchimp": "src/"
         }
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    }
     "minimum-stability": "dev"
 }
