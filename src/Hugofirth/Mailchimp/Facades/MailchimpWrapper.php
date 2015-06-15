@@ -1,6 +1,6 @@
 <?php
 
-namespace HugoFirth\Mailchimp\Facades;
+namespace Hugofirth\Mailchimp\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
