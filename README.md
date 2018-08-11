@@ -29,7 +29,7 @@ Add the following to the `providers` array:
 ),
 ```
 
-Furthermore, add the following the the `aliases` array:
+Furthermore, add the following to the `aliases` array:
 
 ```php
 'aliases' => array(
